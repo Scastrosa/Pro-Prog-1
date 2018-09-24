@@ -2,20 +2,26 @@ package controlador;
 
 import modelo.Circulo;
 import modelo.Cuadrado;
+import modelo.Mundo;
 import vista.Interfaz;
 
 public class Controlador 
 {
 	private Interfaz i;
-	private Cuadrado c;
-	private Circulo c1;
+	private Mundo m;
 	
 	public Controlador()
 	{
 		i = new Interfaz();
-		c = new Cuadrado(i.ingresarLado());
-		i.imprimirCuadrado(c.calcularArea(), c.calcularPerimetro());
-		c1 = new Circulo(i.ingresarRadio());
-		i.imprimirCirculo(c1.calcularArea(), c1.calcularPerimetro());
+		m = new Mundo();
+		m.getC().setLado(i.ingresarLado());
+		m.getC().calcularArea();
+		m.getC().calcularPerimetro();
+		i.imprimirCuadrado(m.getC().calcularArea(), m.getC().calcularPerimetro());
+		
+		m.getC1().setRadio(i.ingresarRadio());
+		m.getC1().calcularArea();
+		m.getC1().calcularPerimetro();
+		i.imprimirCirculo(m.getC1().calcularArea(), m.getC1().calcularPerimetro());
 	}
 }

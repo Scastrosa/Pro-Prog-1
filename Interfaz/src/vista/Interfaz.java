@@ -2,6 +2,8 @@ package vista;
 
 import javax.swing.JOptionPane;
 
+import modelo.Circulo;
+
 public class Interfaz 
 {
 	public double ingresarLado()
